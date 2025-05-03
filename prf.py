@@ -39,7 +39,7 @@ if st.button("Process"):
         st.info("Processing URLs. Please wait...")
 
         # Process URLs concurrently
-        with ThreadPoolExecutor(max_workers=10) as executor:
+        with ThreadPoolExecutor(max_workers=2) as executor:
             modified_urls = list(executor.map(get_modified_reel_link, insta_urls))
 
         # Create a DataFrame with original and modified URLs
